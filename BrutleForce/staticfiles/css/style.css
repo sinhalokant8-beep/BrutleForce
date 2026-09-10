@@ -1,0 +1,345 @@
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    color: #262626;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.instagram-logo {
+    width: 100px;
+    height: 100px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   FACEBOOK ICON
+   ========================= */
+
+.facebook-logo {
+    background-position: -414px -259px;
+    background-image: url("https://bit.ly/3v2LT17");
+    background-repeat: no-repeat;
+
+    height: 16px;
+    width: 16px;
+}
+
+
+/* =========================
+   INPUT
+   ========================= */
+
+.login-input {
+    width: 100%;
+    height: 60px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d0d3d6;
+    border-radius: 16px;
+
+    background: #fff;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #262626;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.login-input::placeholder {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #737373;
+    opacity: 1;
+}
+
+
+.login-input:focus {
+    border-color: #a8a8a8;
+}
+
+
+/* =========================
+   ERROR
+   ========================= */
+
+.login-error {
+    display: none;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    color: #ed4956;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: center;
+}
+
+
+.login-error.show {
+    display: block;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.login-button {
+    width: 100%;
+    height: 44px;
+
+    border: none;
+    border-radius: 24px;
+
+    background: #b2dffc;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: not-allowed;
+
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease;
+}
+
+
+/* =========================
+   ACTIVE / GLOW BUTTON
+   ========================= */
+
+.login-button.active {
+    background: #0095f6;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 5px rgba(0, 149, 246, 0.45),
+        0 0 12px rgba(0, 149, 246, 0.35);
+}
+
+
+.login-button.active:hover {
+    background: #0086e6;
+
+    box-shadow:
+        0 0 8px rgba(0, 149, 246, 0.6),
+        0 0 18px rgba(0, 149, 246, 0.45);
+}
+
+
+.login-button.active:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+   ========================= */
+
+.forgot-password {
+    display: block;
+
+    margin-top: 24px;
+
+    text-align: center;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 20px;
+}
+
+
+/* =========================
+   FACEBOOK LOGIN
+   ========================= */
+
+.facebook-login {
+    width: 100%;
+    height: 44px;
+
+    background: #f1f2f4;
+
+    border-radius: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+.facebook-text {
+    color: #262626;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 20px;
+}
+
+
+/* =========================
+   CREATE ACCOUNT
+   ========================= */
+
+.create-account {
+    width: 100%;
+    height: 44px;
+
+    margin-top: 12px;
+
+    border: 1px solid #0064e0;
+
+    border-radius: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+.create-account-text {
+    color: #0064e0;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 20px;
+}
+
+
+/* =========================
+   META
+   ========================= */
+
+.meta-text {
+    margin-top: 24px;
+
+    text-align: center;
+
+    color: #262626;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 20px;
+}
+
+
+.meta-symbol {
+    color: #0064e0;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer-link {
+    color: #737373;
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+
+    line-height: 16px;
+}
+
+
+.footer-copy {
+    text-align: center;
+
+    margin-top: 8px;
+
+    color: #737373;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+
+    line-height: 16px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .instagram-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .login-input {
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .login-input::placeholder {
+        font-size: 16px;
+    }
+
+}
+
